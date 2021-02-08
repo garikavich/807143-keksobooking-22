@@ -1,9 +1,18 @@
-const generatesNumber = function (min, max, dote) {
-  let computation = (Math.random() * (max - min) + min).toFixed(dote)
-  if (computation >= 0 && max > min && min != max && min >= 0 && max >=0) {
-    return computation
+const generatesNumberFloat = function (min, max, dote) {
+  if (max <= min || min < 0 || max < 0) {
+    throw new Error('Error')
   }
-  return null;
+  return (Math.random() * (max - min) + min).toFixed(dote)
 }
 
-generatesNumber(-2, 4, 2)
+generatesNumberFloat(2, 8)
+
+const generatesNumberInteger = function (min, max) {
+  if (max <= min || min < 0 || max < 0) {
+    throw new Error('Error')
+  }
+  return Math.round(Math.random() * (max - min) + min)
+}
+
+generatesNumberInteger(2, 8)
+
