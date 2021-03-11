@@ -23,7 +23,7 @@ similarAds.forEach(({offer}) => {
   adElement.querySelector('.popup__features').innerHTML = offer.features.map(index => `<li class="popup__feature popup__feature--${index}"></li>`);
   adElement.querySelector('.popup__description').textContent = offer.description;
   adElement.querySelector('.popup__photos').textContent = offer.photos.map(index => `img src="${index}" class="popup__photo" width="45" height="40" alt="Фотография жилья"`);
-  fragment.appendChild(adElement)
+  fragment.appendChild(adElement);
 })
 
 mapCanvas.appendChild(fragment);
