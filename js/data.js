@@ -47,7 +47,7 @@ const generateRandomData = function () {
       checkout: getRandomElementArray(CHECKOUT),
       features: getSliceArray(FEATURES),
       description: getRandomElementArray(DESCRIPTION),
-      photos: getSliceArray(PHOTOS),
+      photos: PHOTOS,
     },
     location: {
       x: generatesNumberFloat(LOCATION_X[0], LOCATION_X[1], 4),
@@ -56,5 +56,6 @@ const generateRandomData = function () {
   }
 }
 
-new Array(SIMILAR_COUNT_DATA).fill(null).map(generateRandomData);
+const generateRandomDatas = () => new Array(SIMILAR_COUNT_DATA).fill(null).map(generateRandomData);
 
+export {generateRandomDatas}
